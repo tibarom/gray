@@ -8,6 +8,9 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import VideoComponent from "@/components/VideoComponent" // VideoComponent를 import합니다.
+import { Toaster as DefaultToaster } from "@/registry/default/ui/toaster"
+import { Toaster as NewYorkSonner } from "@/registry/new-york/ui/sonner"
+import { Toaster as NewYorkToaster } from "@/registry/new-york/ui/toaster"
 
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -53,6 +56,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <SiteFooter />
             </div>
             <TailwindIndicator />
+            <NewYorkToaster />
+            <DefaultToaster />
+            <NewYorkSonner />
           </ThemeProvider>
         </body>
       </html>

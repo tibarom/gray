@@ -1,41 +1,80 @@
+"use client"
+
 import * as React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
-import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
+import { Badge } from "@/registry/new-york/ui/badge"
 
-interface MainNavProps {
-  items?: NavItem[]
-}
+export function MainNav() {
+  const pathname = usePathname()
 
-export function MainNav({ items }: MainNavProps) {
   return (
-    <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="flex items-center space-x-2">
+    <div className="mr-4 hidden md:flex">
+      <Link href="/" className="mr-6 flex items-center space-x-2">
         <Icons.logo className="h-6 w-6" />
-        <span className="inline-block font-bold">{siteConfig.name}</span>
+        <span className="hidden font-bold sm:inline-block">
+          {siteConfig.name}
+        </span>
       </Link>
-      {items?.length ? (
-        <nav className="flex gap-6">
-          {items?.map(
-            (item, index) =>
-              item.href && (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center text-sm font-medium text-muted-foreground",
-                    item.disabled && "cursor-not-allowed opacity-80"
-                  )}
-                >
-                  {item.title}
-                </Link>
-              )
+      <nav className="flex items-center gap-4 text-sm lg:gap-6">
+        <Link
+          href="/Team"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname === "/docs" ? "text-foreground" : "text-foreground/60"
           )}
-        </nav>
-      ) : null}
+        >
+          Team
+        </Link>
+        <Link
+          href="/Portfolio"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/Portfolio")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Portfolio
+        </Link>
+        <Link
+          href="/Blog"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/Blog")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Blog
+        </Link>
+        <Link
+          href="/Recruit"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/Recruit")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Recruit
+        </Link>
+        <Link
+          href="/Contact"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/Contact")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Contact
+        </Link>
+      </nav>
     </div>
   )
 }
