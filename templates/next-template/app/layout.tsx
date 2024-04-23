@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
+import VideoComponent from "@/components/VideoComponent" // VideoComponent를 import합니다.
 
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -43,9 +44,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {/* 배경 비디오를 추가합니다. */}
             <div className="relative flex min-h-screen flex-col">
+            <VideoComponent>
               <SiteHeader />
-              <div>{children}</div>
+              <div className="relative z-10">{children}</div> {/* 내용을 비디오 위에 올립니다. */}
+              </VideoComponent> 
               <SiteFooter />
             </div>
             <TailwindIndicator />
