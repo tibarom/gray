@@ -38,7 +38,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-xl border bg-card text-card-foreground shadow",
+      "border bg-card text-card-foreground shadow",
       className
     )}
     {...props}
@@ -105,16 +105,16 @@ CardFooter.displayName = "CardFooter"
 
 export default function IndexPage() {
   return (
-    <section className="container grid items-start gap-6 pb-8 pt-6 md:py-10">
+    <section className="container grid items-start gap-6 pb-8 pt-6 md:py-10 w-4/6">
       <div className="flex flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
           Team <br className="hidden sm:inline" />
         </h1>
       </div>
       <CardContent className="grid grid-cols-2 gap-8">
-              <div className="flex items-start gap-4 w-4/6">
+              <div className="flex items-start gap-4 w-5/6">
                 <Avatar className="hidden h-28 w-28 sm:flex">
-                  <AvatarImage src="/avatars/01.jpg" alt="Avatar" className="rounded-full" />
+                  <AvatarImage src="/avatars/01.jpg" alt="Avatar"/>
                   <AvatarFallback>OM</AvatarFallback>
                 </Avatar>
                 <div className="grid gap-1">
@@ -126,9 +126,9 @@ export default function IndexPage() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 w-4/6">
+              <div className="flex items-start gap-4 w-5/6">
                 <Avatar className="hidden h-28 w-28 sm:flex">
-                  <AvatarImage src="/avatars/02.jpeg" alt="Avatar" className="rounded-full" />
+                  <AvatarImage src="/avatars/02.jpeg" alt="Avatar"/>
                   <AvatarFallback>JL</AvatarFallback>
                 </Avatar>
                 <div className="grid gap-1">
@@ -140,9 +140,9 @@ export default function IndexPage() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 w-4/6">
+              <div className="flex items-start gap-4 w-5/6">
                 <Avatar className="hidden h-28 w-28 sm:flex">
-                  <AvatarImage src="/avatars/03.jpg" alt="Avatar" className="rounded-full" />
+                  <AvatarImage src="/avatars/03.jpg" alt="Avatar"/>
                   <AvatarFallback>IN</AvatarFallback>
                 </Avatar>
                 <div className="grid gap-1">
@@ -154,13 +154,13 @@ export default function IndexPage() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 w-4/6">
+              <div className="flex items-start gap-4 w-5/6">
                 <Avatar className="hidden h-28 w-28 sm:flex">
-                  <AvatarImage src="/avatars/04.jpg" alt="Avatar" className="rounded-full" />
+                  <AvatarImage src="/avatars/04.jpg" alt="Avatar"/>
                   <AvatarFallback>WK</AvatarFallback>
                 </Avatar>
                 <div className="grid gap-1">
-                  <p className="text-sm font-medium leading-none">
+                  <p className="text-lg font-medium leading-none">
                     William Kim
                   </p>
                   <p className="text-sm text-muted-foreground">
@@ -168,9 +168,9 @@ export default function IndexPage() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 w-4/6">
+              <div className="flex items-start gap-4 w-5/6">
                 <Avatar className="hidden h-28 w-28 sm:flex">
-                  <AvatarImage src="/avatars/05.jpg" alt="Avatar" className="rounded-full" />
+                  <AvatarImage src="/avatars/05.jpg" alt="Avatar"/>
                   <AvatarFallback>SD</AvatarFallback>
                 </Avatar>
                 <div className="grid gap-1">

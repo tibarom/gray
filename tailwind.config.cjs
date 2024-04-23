@@ -13,6 +13,7 @@ module.exports = {
       },
     },
     extend: {
+      'responsive': '2vw', // '2vw'는 뷰포트 너비의 2%에 해당하는 글자 크기를 설정
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
