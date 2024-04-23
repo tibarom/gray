@@ -1,11 +1,13 @@
-import { LucideProps, Moon, SunMedium, type LucideIcon } from "lucide-react"
+// import { IconProps, Moon, SunMedium, type LucideIcon } from "lucide-react"
+type IconProps = React.HTMLAttributes<SVGElement>
+// import { IconProps, Moon, SunMedium, type LucideIcon } from "lucide-react"
 
-export type Icon = LucideIcon
+// export type Icon = LucideIcon
 
 export const Icons = {
-  sun: SunMedium,
-  moon: Moon,
-  twitter: (props: LucideProps) => (
+  // sun: SunMedium,
+  // moon: Moon,
+  twitter: (props: IconProps) => (
     <svg
       {...props}
       height="23"
@@ -16,14 +18,14 @@ export const Icons = {
       <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
     </svg>
   ),
-  logo: (props: LucideProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.29 228.29" fill="#ffffff" stroke-width="0px" {...props}>
+  logo: (props: IconProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.29 228.29" fill="currentColor" stroke="currentColor" {...props}>
       <path className="cls-1" d="M114.15 191.95L33.06 152.09V76.2L43.8 70.92L184.64 141.37V104.09L43.87 34.55L0 56.11V172.18L114.15 228.29L167.5 202.07L130.57 183.88L114.15 191.95Z"/>
       <path className="cls-1" d="M114.15 0L60.25 26.49L97.17 44.68L114.15 36.34L195.23 76.2V93L195.74 93.24L195.23 94.23V152.12L184.56 157.41L43.61 87.92V124.37L184.54 193.8L228.29 172.15V56.11L114.15 0Z"/>
     </svg>
   ),
 
-  gitHub: (props: LucideProps) => (
+  gitHub: (props: IconProps) => (
     <svg viewBox="0 0 438.549 438.549" {...props}>
       <path
         fill="currentColor"
