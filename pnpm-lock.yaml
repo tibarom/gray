@@ -566,6 +566,15 @@ importers:
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
+      cmdk:
+        specifier: 0.2.0
+        version: 0.2.0(@types/react@18.2.65)(react-dom@18.2.0)(react@18.2.0)
+      embla-carousel-react:
+        specifier: 8.0.0-rc15
+        version: 8.0.0-rc15(react@18.2.0)
+      input-otp:
+        specifier: 1.2.2
+        version: 1.2.2(react-dom@18.2.0)(react@18.2.0)
       lucide-react:
         specifier: 0.359.0
         version: 0.359.0(react@18.2.0)
@@ -578,18 +587,33 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
+      react-day-picker:
+        specifier: 8.7.1
+        version: 8.7.1(date-fns@2.30.0)(react@18.2.0)
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-hook-form:
+        specifier: 7.44.2
+        version: 7.44.2(react@18.2.0)
+      react-resizable-panels:
+        specifier: 0.0.55
+        version: 0.0.55(react-dom@18.2.0)(react@18.2.0)
       sharp:
         specifier: ^0.31.3
         version: 0.31.3
+      sonner:
+        specifier: 1.2.3
+        version: 1.2.3(react-dom@18.2.0)(react@18.2.0)
       tailwind-merge:
         specifier: ^1.13.2
         version: 1.13.2
       tailwindcss-animate:
         specifier: ^1.0.6
         version: 1.0.6(tailwindcss@3.4.0)
+      vaul:
+        specifier: 0.9.0
+        version: 0.9.0(@types/react-dom@18.2.22)(@types/react@18.2.65)(react-dom@18.2.0)(react@18.2.0)
       zod:
         specifier: ^3.21.4
         version: 3.21.4
@@ -7664,6 +7688,7 @@ packages:
 
   /input-otp@1.2.2(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-9x6UurPuc9Tb+ywWFcFrG4ryvScSmfLyj8D35dl/HNpSr9jZNtWiXufU65kaDHD/KYUop7hDFH+caZCUKdYNsg==}
+    deprecated: 'please run: npm install input-otp@latest'
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
