@@ -8,7 +8,7 @@ import {
 } from "@/registry/default/ui/avatar"
 
 export const metadata = {
-  title: "Team",
+  title: "Portfolio",
 }
 
 export default async function IndexPage() {
