@@ -467,6 +467,9 @@ importers:
 
   templates/next-template:
     dependencies:
+      '@hookform/resolvers':
+        specifier: 3.1.0
+        version: 3.1.0(react-hook-form@7.44.2)
       '@mdx-js/loader':
         specifier: ^3.0.1
         version: 3.0.1(webpack@5.91.0)
@@ -569,6 +572,9 @@ importers:
       '@shikijs/compat':
         specifier: ^1.1.7
         version: 1.1.7
+      '@tanstack/react-table':
+        specifier: ^8.9.1
+        version: 8.9.1(react-dom@18.2.0)(react@18.2.0)
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13
@@ -599,6 +605,9 @@ importers:
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
+      embla-carousel-autoplay:
+        specifier: 8.0.0-rc15
+        version: 8.0.0-rc15(embla-carousel@8.0.0-rc15)
       embla-carousel-react:
         specifier: 8.0.0-rc15
         version: 8.0.0-rc15(react@18.2.0)
@@ -644,6 +653,9 @@ importers:
       react-wrap-balancer:
         specifier: 0.4.1
         version: 0.4.1(react@18.2.0)
+      recharts:
+        specifier: ^2.6.2
+        version: 2.6.2(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
       rehype-autolink-headings:
         specifier: ^6.1.1
         version: 6.1.1
