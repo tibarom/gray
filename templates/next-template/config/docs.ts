@@ -9,15 +9,15 @@ export const docsConfig: DocsConfig = {
   mainNav: [
     {
       title: "Team",
-      href: "/Team",
+      href: "/team",
     },
     {
       title: "Portfolio",
       href: "/Portfolio",
     },
     {
-      title: "Blog",
-      href: "/Blog",
+      title: "Writing",
+      href: "/writing",
     },
     {
       title: "Recruit",

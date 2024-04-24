@@ -417,3 +417,5 @@ export function Mdx({ code }: MdxProps) {
     </div>
   )
 }
+
+export const LinkedCard = components.LinkedCard

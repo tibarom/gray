@@ -31,10 +31,10 @@ export function MainNav() {
           Team
         </Link>
         <Link
-          href="/Portfolio"
+          href="/portfolio"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/Portfolio")
+            pathname?.startsWith("/portfolio")
               ? "text-foreground"
               : "text-foreground/60"
           )}
@@ -42,32 +42,21 @@ export function MainNav() {
           Portfolio
         </Link>
         <Link
-          href="/Blog"
+          href="/writing"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/Blog")
+            pathname?.startsWith("/writing")
               ? "text-foreground"
               : "text-foreground/60"
           )}
         >
-          Blog
+          Writing
         </Link>
         <Link
-          href="/Recruit"
+          href="/contact"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/Recruit")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          Recruit
-        </Link>
-        <Link
-          href="/Contact"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/Contact")
+            pathname?.startsWith("/contact")
               ? "text-foreground"
               : "text-foreground/60"
           )}

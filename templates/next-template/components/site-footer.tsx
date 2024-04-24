@@ -1,4 +1,9 @@
 import { siteConfig } from "@/config/site"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+import { Icons } from "@/components/icons";
+import { buttonVariants } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle"
 
 export function SiteFooter() {
   return (
@@ -18,6 +23,43 @@ export function SiteFooter() {
         </p>
       </div>
       <div className="bg-invert-0">
+      <nav className="flex items-center justify-center">
+            <Link
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div
+                className={cn(
+                  buttonVariants({
+                    variant: "ghost",
+                  }),
+                  "w-9 px-0"
+                )}
+              >
+                <Icons.gitHub className="h-4 w-4" />
+                <span className="sr-only">GitHub</span>
+              </div>
+            </Link>
+            <Link
+              href={siteConfig.links.twitter}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div
+                className={cn(
+                  buttonVariants({
+                    variant: "ghost",
+                  }),
+                  "w-9 px-0"
+                )}
+              >
+                <Icons.twitter className="h-3 w-3 fill-current" />
+                <span className="sr-only">Twitter</span>
+              </div>
+            </Link>
+            <ModeToggle />
+          </nav>
       <div className="mt-28 pb-28 bg-muted" aria-hidden="true">
         <div className="-mt-6">
             <div className="bg-background h-6"></div>

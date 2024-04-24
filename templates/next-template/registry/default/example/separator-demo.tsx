@@ -11,7 +11,7 @@ export default function SeparatorDemo() {
       </div>
       <Separator className="my-4" />
       <div className="flex h-5 items-center space-x-4 text-sm">
-        <div>Blog</div>
+        <div>Writing</div>
         <Separator orientation="vertical" />
         <div>Docs</div>
         <Separator orientation="vertical" />

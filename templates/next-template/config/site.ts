@@ -8,29 +8,25 @@ export const siteConfig = {
   mainNav: [
     {
       title: "Team",
-      href: "/Team",
+      href: "/team",
     },
     {
       title: "Portfolio",
-      href: "/Portfolio",
+      href: "/portfolio",
     },
     {
-      title: "Blog",
-      href: "/Blog",
-    },
-    {
-      title: "Recruit",
-      href: "/Recruit",
+      title: "Writing",
+      href: "/writing",
     },
     {
       title: "Contact",
-      href: "/Contact",
+      href: "/contact",
     },
   ],
   
   links: {
     twitter: "https://twitter.com/shadcn",
     github: "https://github.com/shadcn/ui",
-    docs: "/Contact",
+    docs: "/contact",
   },
 }

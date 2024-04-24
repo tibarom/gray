@@ -39,9 +39,9 @@ const LinksProperties = defineNestedType(() => ({
   },
 }))
 
-export const Doc = defineDocumentType(() => ({
-  name: "Doc",
-  filePathPattern: `docs/**/*.mdx`,
+export const Writing = defineDocumentType(() => ({
+  name: "Writing",
+  filePathPattern: `writing/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -50,30 +50,27 @@ export const Doc = defineDocumentType(() => ({
     },
     description: {
       type: "string",
+    },
+    date: {
+      type: "date",
       required: true,
     },
     published: {
       type: "boolean",
       default: true,
     },
-    links: {
-      type: "nested",
-      of: LinksProperties,
+    image: {
+      type: "string",
+      required: true,
     },
-    featured: {
-      type: "boolean",
-      default: false,
-      required: false,
-    },
-    component: {
-      type: "boolean",
-      default: false,
-      required: false,
-    },
-    toc: {
-      type: "boolean",
-      default: true,
-      required: false,
+    authors: {
+      // Reference types are not embedded.
+      // Until this is fixed, we can use a simple list.
+      // type: "reference",
+      // of: Author,
+      type: "list",
+      of: { type: "string" },
+      required: true,
     },
   },
   computedFields,
@@ -92,36 +89,38 @@ export const Team = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    initials: {
+      type: "string",
+      required: true,
+    },
+    image: {
+      type: "string",
+      required: true,
+    },
+    avatar: {
+      type: "string",
+      required: true,
+    },
+    linkedin: {
+      type: "string",
+      required: true,
+    },
+    twitter: {
+      type: "string",
+      required: true,
+    },
     published: {
       type: "boolean",
       default: true,
     },
-    links: {
-      type: "nested",
-      of: LinksProperties,
-    },
-    featured: {
-      type: "boolean",
-      default: false,
-      required: false,
-    },
-    component: {
-      type: "boolean",
-      default: false,
-      required: false,
-    },
-    toc: {
-      type: "boolean",
-      default: true,
-      required: false,
-    },
+    
   },
   computedFields,
 }))
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Doc, Team],
+  documentTypes: [Writing, Team],
   mdx: {
     remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [
