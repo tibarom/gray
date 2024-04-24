@@ -118,9 +118,51 @@ export const Team = defineDocumentType(() => ({
   computedFields,
 }))
 
+export const Portfolio = defineDocumentType(() => ({
+  name: "Portfolio",
+  filePathPattern: `portfolio/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+      required: true,
+    },
+    initials: {
+      type: "string",
+      required: true,
+    },
+    image: {
+      type: "string",
+      required: true,
+    },
+    avatar: {
+      type: "string",
+      required: true,
+    },
+    linkedin: {
+      type: "string",
+      required: true,
+    },
+    twitter: {
+      type: "string",
+      required: true,
+    },
+    published: {
+      type: "boolean",
+      default: true,
+    },
+    
+  },
+  computedFields,
+}))
+
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Writing, Team],
+  documentTypes: [Writing, Team, Portfolio],
   mdx: {
     remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [

@@ -1,4 +1,4 @@
-import { allTeams } from "contentlayer/generated"
+import { allPortfolios } from "contentlayer/generated"
 import { LinkedCard } from '@/components/mdx-components';
 
 import {
@@ -12,7 +12,7 @@ export const metadata = {
 }
 
 export default async function IndexPage() {
-  const posts = allTeams
+  const posts = allPortfolios
     // .filter((post) => post.published)
 
   return (
