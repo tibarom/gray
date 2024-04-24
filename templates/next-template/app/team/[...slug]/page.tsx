@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation"
-import { allDocs } from "contentlayer/generated"
 import { allTeams } from "contentlayer/generated"
 import Image from "next/image"
 
@@ -81,7 +80,7 @@ export async function generateMetadata({
 export async function generateStaticParams(): Promise<
   DocPageProps["params"][]
 > {
-  return allDocs.map((doc) => ({
+  return allTeams.map((doc) => ({
     slug: doc.slugAsParams.split("/"),
   }))
 }

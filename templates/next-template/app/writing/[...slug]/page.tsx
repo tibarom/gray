@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation"
-import { allDocs } from "contentlayer/generated"
-import { allTeams } from "contentlayer/generated"
+import { allWritings } from "contentlayer/generated"
 import Image from "next/image"
 
 import "@/styles/mdx.css"
@@ -33,7 +32,7 @@ async function getDocFromParams({ params }: DocPageProps) {
 
   // console.log("slug: ", slug)
   // console.log("doc: ", doc)
-  doc = allTeams.find((doc) => doc.slugAsParams === slug);
+  doc = allWritings.find((doc) => doc.slugAsParams === slug);
  
   if (!doc) {
     return null;
@@ -81,7 +80,7 @@ export async function generateMetadata({
 export async function generateStaticParams(): Promise<
   DocPageProps["params"][]
 > {
-  return allDocs.map((doc) => ({
+  return allWritings.map((doc) => ({
     slug: doc.slugAsParams.split("/"),
   }))
 }
