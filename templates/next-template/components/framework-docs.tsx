@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { allDocs } from "contentlayer/generated"
+import { allTeams } from "contentlayer/generated"
 
 import { Mdx } from "./mdx-components"
 
@@ -10,8 +10,8 @@ interface FrameworkDocsProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function FrameworkDocs({ ...props }: FrameworkDocsProps) {
-  const frameworkDoc = allDocs.find(
-    (doc) => doc.slug === `/docs/installation/${props.data}`
+  const frameworkDoc = allTeams.find(
+    (doc) => doc.slug === `/team/tempname/${props.data}`
   )
 
   if (!frameworkDoc) {
