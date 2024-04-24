@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "Contact",
+}
+
 export default function IndexPage() {
   return (
     <section className="container grid items-start gap-6 pb-8 pt-6 md:py-10 w-4/6">
