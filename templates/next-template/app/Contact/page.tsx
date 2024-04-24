@@ -4,7 +4,7 @@ export const metadata = {
 
 export default function IndexPage() {
   return (
-    <section className="container grid items-start gap-6 pb-8 pt-6 md:py-10 w-4/6">
+    <div className="container max-w-4xl py-6 lg:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
           Contact <br className="hidden sm:inline" />
@@ -26,7 +26,7 @@ export default function IndexPage() {
       </div>
       <div className="flex gap-4">
       </div>
-    </section>
+    </div>
   )
 }
 
