@@ -7,6 +7,7 @@ import { GeistSans } from "geist/font/sans"
 //   subsets: ["latin"],
 //   variable: "--font-sans",
 // })
+
 export const fontSans = GeistSans
 
 export const fontMono = FontMono({
