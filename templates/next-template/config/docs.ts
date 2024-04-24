@@ -13,19 +13,15 @@ export const docsConfig: DocsConfig = {
     },
     {
       title: "Portfolio",
-      href: "/Portfolio",
+      href: "/portfolio",
     },
     {
       title: "Writing",
       href: "/writing",
     },
     {
-      title: "Recruit",
-      href: "/Recruit",
-    },
-    {
       title: "Contact",
-      href: "/Contact",
+      href: "/contact",
     },
   ],
   sidebarNav: [
