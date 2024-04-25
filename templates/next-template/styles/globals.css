@@ -94,3 +94,7 @@
   z-index: 2; /* 애니메이션 위에 표시되어야 하는 컨텐츠 */
   padding: 20px;
 }
+
+.hidden-content {
+  display: none;
+}

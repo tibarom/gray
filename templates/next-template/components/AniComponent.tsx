@@ -1,20 +1,28 @@
 "use client"
+import { is } from 'date-fns/locale';
 import { usePathname } from 'next/navigation';
 
 import React, { useState, useEffect } from 'react';
 import * as THREE from 'three';
-type IcosahedronBufferGeometry = THREE.IcosahedronGeometry;
+// type IcosahedronBufferGeometry = THREE.IcosahedronGeometry;
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 interface AniComponentProps {
   children: React.ReactNode;
 }
 
 const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
-  // const AniComponent: React.FC<AniComponentProps> = () => {
   const router = usePathname();
   const isRoot = router === '/';
+
   const [initEnter, setInitEnter] = useState(false);
   const [htmlContent, setHtmlContent] = useState('');
+
+  useEffect(() => {
+    if(!isRoot) {
+      setHtmlContent("<body/>")
+    } 
+  }, [isRoot]); 
 
   useEffect(() => {
     fetch('/api/pugHtml')
@@ -27,7 +35,7 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
       .catch(error => {
           console.error('Error fetching pug HTML:', error);
       });
-  }, []); // 의존성 배열을 비워서 컴포넌트가 마운트될 때 한 번만 실행되게 합니다.
+  }, []);
 
   useEffect(() => {
       if (initEnter) {
@@ -35,11 +43,12 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
         return () => {
         };
       }
-    }, [initEnter]); 
+  }, [initEnter]); 
 
 let scene: THREE.Scene;
 let camera: THREE.PerspectiveCamera;
 let renderer: THREE.WebGLRenderer;
+let controls: OrbitControls;
 let container: HTMLElement | null;
 let start = Date.now();
 let _width: number;
@@ -70,6 +79,7 @@ function createWorld() {
   renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
   renderer.setSize(_width, _height);
   renderer.setClearColor(0x000000, 0); // 배경색을 투명하게 설정
+  // renderer.setAnimationLoop(animation);
   //---
   container = document.getElementById("container") as HTMLElement;
   container.appendChild(renderer.domElement);
@@ -192,13 +202,12 @@ function animation() {
 return (
   <div className="relative z-0 h-full w-full">
       <div id="container" />
-      {/* 여기에 children을 렌더링 */}
-      <div className="content">
-          {children}
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        <div>
+            {children}
+        </div>
+      <div dangerouslySetInnerHTML={ {__html: htmlContent }}/>
   </div>
-);
+  );
 }
 
 export default AniComponent;

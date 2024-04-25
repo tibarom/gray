@@ -50,11 +50,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {/* 배경 비디오를 추가합니다. */}
-            <div className="relative flex min-h-screen flex-col">
+            <div className="relative flex min-h-screen flex-col bg-black">
             <AniComponent>
               <SiteHeader />
-              <div className="relative z-10">{children}</div> {/* 내용을 비디오 위에 올립니다. */}
+              <div className="relative z-10">{children}</div>
               </AniComponent> 
               <SiteFooter />
             </div>
