@@ -7,12 +7,15 @@ import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
-import VideoComponent from "@/components/VideoComponent" // VideoComponent를 import합니다.
+
 import { Toaster as DefaultToaster } from "@/registry/default/ui/toaster"
 import { Toaster as NewYorkSonner } from "@/registry/new-york/ui/sonner"
 import { Toaster as NewYorkToaster } from "@/registry/new-york/ui/toaster"
 
 import { ThemeProvider } from "@/components/theme-provider"
+
+import VideoComponent from "@/components/VideoComponent"
+import AniComponent from "@/components/AniComponent"
 
 export const metadata: Metadata = {
   title: {
@@ -49,10 +52,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {/* 배경 비디오를 추가합니다. */}
             <div className="relative flex min-h-screen flex-col">
-            <VideoComponent>
+            <AniComponent>
               <SiteHeader />
               <div className="relative z-10">{children}</div> {/* 내용을 비디오 위에 올립니다. */}
-              </VideoComponent> 
+              </AniComponent> 
               <SiteFooter />
             </div>
             <TailwindIndicator />
