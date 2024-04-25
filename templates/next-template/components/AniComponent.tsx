@@ -1,28 +1,18 @@
 "use client"
-import { is } from 'date-fns/locale';
 import { usePathname } from 'next/navigation';
 
 import React, { useState, useEffect } from 'react';
 import * as THREE from 'three';
-// type IcosahedronBufferGeometry = THREE.IcosahedronGeometry;
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+type IcosahedronBufferGeometry = THREE.IcosahedronGeometry;
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 interface AniComponentProps {
   children: React.ReactNode;
 }
 
 const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
-  const router = usePathname();
-  const isRoot = router === '/';
-
   const [initEnter, setInitEnter] = useState(false);
   const [htmlContent, setHtmlContent] = useState('');
-
-  useEffect(() => {
-    if(!isRoot) {
-      setHtmlContent("<body/>")
-    } 
-  }, [isRoot]); 
 
   useEffect(() => {
     fetch('/api/pugHtml')
@@ -35,7 +25,7 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
       .catch(error => {
           console.error('Error fetching pug HTML:', error);
       });
-  }, []);
+  }, []); // 의존성 배열을 비워서 컴포넌트가 마운트될 때 한 번만 실행되게 합니다.
 
   useEffect(() => {
       if (initEnter) {
@@ -43,24 +33,21 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
         return () => {
         };
       }
-  }, [initEnter]); 
+    }, [initEnter]); 
 
 let scene: THREE.Scene;
 let camera: THREE.PerspectiveCamera;
 let renderer: THREE.WebGLRenderer;
-let controls: OrbitControls;
+// let controls: OrbitControls;
 let container: HTMLElement | null;
 let start = Date.now();
 let _width: number;
 let _height: number;
 
 function init() {
-  // let Theme = {_darkred: 0x000000}
   console.log("init started.")
   createWorld();
   createPrimitive();
-  // createGUI();
-  //---
   animation();
 }
 
@@ -201,11 +188,13 @@ function animation() {
 
 return (
   <div className="relative z-0 h-full w-full">
-      <div id="container" />
-        <div>
+    <div/>
+        <div id="container" dangerouslySetInnerHTML={ {__html: htmlContent }}/>
+        <div className="content">
             {children}
         </div>
-      <div dangerouslySetInnerHTML={ {__html: htmlContent }}/>
+        
+        {/* <div dangerouslySetInnerHTML={ {__html: htmlContent }}/> */}
   </div>
   );
 }
