@@ -50,12 +50,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col bg-black">
+          <div vaul-drawer-wrapper="">
+              <div className="relative flex min-h-screen flex-col bg-background">
             <AniComponent>
               <SiteHeader />
               <div className="relative z-10">{children}</div>
               </AniComponent> 
               <SiteFooter />
+            </div>
             </div>
             <TailwindIndicator />
             <NewYorkToaster />
