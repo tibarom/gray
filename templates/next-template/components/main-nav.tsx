@@ -8,38 +8,31 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { Badge } from "@/registry/new-york/ui/badge"
-
+import { ModeToggle } from "@/components/mode-toggle"
 export function MainNav() {
   const pathname = usePathname()
 
   return (
-    <div className="mr-4 hidden md:flex">
+    // <div className="mr-4 hidden md:flex flex h-16 items-center space-x-4 justify-between space-x-0">
+      <div className="mr-4 hidden md:flex h-16 space-x-4  space-x-0 w-full">
+      <div className="container flex justify-between w-full">
+      <div className="flex items-center gap-4 text-sm lg:gap-6">
       <Link href="/" className="mr-6 flex items-center space-x-2">
         <Icons.logo className="h-6 w-6" />
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>
       </Link>
-      <nav className="flex items-center gap-4 text-sm lg:gap-6">
         <Link
-          href="/team/"
+          href="/team"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname === "/docs" ? "text-foreground" : "text-foreground/60"
-          )}
-        >
-          Team
-        </Link>
-        <Link
-          href="/portfolio"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/portfolio")
+            pathname?.startsWith("/team")
               ? "text-foreground"
               : "text-foreground/60"
           )}
         >
-          Portfolio
+          Team
         </Link>
         <Link
           href="/writing"
@@ -53,6 +46,17 @@ export function MainNav() {
           Writing
         </Link>
         <Link
+          href="/portfolio"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/portfolio")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Portfolio
+        </Link>
+        <Link
           href="/contact"
           className={cn(
             "transition-colors hover:text-foreground/80",
@@ -63,7 +67,11 @@ export function MainNav() {
         >
           Contact
         </Link>
-      </nav>
-    </div>
+      </div>
+      <div className="flex items-center">
+      <ModeToggle/>
+      </div>
+      </div>
+      </div>
   )
 }

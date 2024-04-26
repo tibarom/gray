@@ -88,7 +88,7 @@ export default async function IndexPage({ params }: DocPageProps) {
   const toc = await getTableOfContents(doc.body.raw)
 
   return (
-    <article className="container relative max-w-3xl py-6 lg:py-10">
+    <article className="container relative max-w-3xl py-6 lg:py-10 bg-background/80">
       {doc.image && (
         <Image
           src={doc.image}

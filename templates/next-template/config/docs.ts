@@ -12,12 +12,12 @@ export const docsConfig: DocsConfig = {
       href: "/team",
     },
     {
-      title: "Portfolio",
-      href: "/portfolio",
-    },
-    {
       title: "Writing",
       href: "/writing",
+    },
+    {
+      title: "Portfolio",
+      href: "/portfolio",
     },
     {
       title: "Contact",

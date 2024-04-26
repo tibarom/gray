@@ -13,6 +13,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'gradient-opacity': 'linear-gradient(to bottom, hsl(var(--background)) 50%, transparent 100%)'
+      },
       'responsive': '2vw', // '2vw'는 뷰포트 너비의 2%에 해당하는 글자 크기를 설정
       colors: {
         border: "hsl(var(--border))",

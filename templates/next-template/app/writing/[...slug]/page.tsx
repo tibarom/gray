@@ -12,6 +12,7 @@ import { siteConfig } from "@/config/site"
 import { getTableOfContents } from "@/lib/toc"
 import { absoluteUrl, cn } from "@/lib/utils"
 import { Mdx } from "@/components/mdx-components"
+import { formatDate } from "@/lib/utils"
 
 interface DocPageProps {
   params: {
@@ -91,8 +92,8 @@ export default async function IndexPage({ params }: DocPageProps) {
   const toc = await getTableOfContents(doc.body.raw)
 
   return (
-    <article className="container relative max-w-3xl py-6 lg:py-10">
-      {doc.image && (
+    <article className="container relative max-w-3xl py-6 lg:py-10 bg-background/80">
+      {/* {doc.image && (
         <Image
           src={doc.image}
           alt={doc.title}
@@ -101,13 +102,16 @@ export default async function IndexPage({ params }: DocPageProps) {
           className="my-8 rounded-md border bg-muted transition-colors"
           priority
         />
-      )}
-      <p className="text-muted-foreground"></p>
-      {doc.description}
+      )} */}
+
+
       <div>
-        <h1 className="mt-2 inline-block font-bold leading-tight sm:text-2xl lg:text-3xl mb-8">
+        <h1 className="mt-2 inline-block font-bold leading-tight sm:text-2xl lg:text-3xl mb-4">
           {doc.title}
       </h1>
+      {/* <p className="text-muted-foreground">{doc.description}</p> */}
+      <p className="text-sm text-muted-foreground mb-8">
+        by {doc.authors.map(author => author).join(", ")} on {formatDate(doc.date)}</p>
       </div>
       <Mdx code={doc.body.code} />
       <hr className="mt-12" />

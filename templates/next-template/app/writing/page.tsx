@@ -15,20 +15,18 @@ export default async function IndexPage() {
     .sort((a, b) => {
       return compareDesc(new Date(a.date), new Date(b.date))
     })
-
+  
   return (
-    <div className="container max-w-4xl py-6 lg:py-10">
-      <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
-      </div>
-      <hr className="my-8" />
+    <div className="container max-w-4xl py-6 lg:py-10 h-screen bg-background/80">
+      <div className="my-8" />
       {posts?.length ? (
-        <div className="grid gap-10 sm:grid-cols-2">
+        <div className="grid gap-10 grid-cols-1">
           {posts.map((post, index) => (
             <article
               key={post._id}
               className="group relative flex flex-col space-y-2"
             >
-              {post.image && (
+              {/* {post.image && (
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -37,14 +35,14 @@ export default async function IndexPage() {
                   className="rounded-md border bg-muted transition-colors"
                   priority={index <= 1}
                 />
-              )}
+              )} */}
               <h2 className="text-2xl font-extrabold">{post.title}</h2>
               {post.description && (
                 <p className="text-muted-foreground">{post.description}</p>
               )}
               {post.date && (
                 <p className="text-sm text-muted-foreground">
-                  {formatDate(post.date)}
+                  by {post.authors.map(author => author).join(", ")} on {formatDate(post.date)}
                 </p>
               )}
               <Link href={post.slug} className="absolute inset-0">

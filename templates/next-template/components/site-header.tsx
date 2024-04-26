@@ -1,18 +1,28 @@
 import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
+import Link from "next/link";
+import { siteConfig } from "@/config/site";
+import { buttonVariants } from "@/components/ui/button";
+import ModeToggle from "@/registry/default/example/mode-toggle";
+import { Icons } from "./icons";
+import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+    <header className="sticky top-0 z-50 w-full bg-gradient-opacity">
+      <div className="container flex h-16 items-center space-x-4 justify-between space-x-0">
           <MainNav/>
-          <MobileNav />
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            {/* <CommandMenu /> */}
-          </div>
 
-        </div>
+<div className="flex">      <Link href="/" className="mr-6 flex items-center space-x-2 sm:hidden">
+        <Icons.logo className="h-6 w-6" />
+        <span className="font-bold sm:inline-block">
+          {siteConfig.name}
+        </span>
+      </Link>           <div className="md:hidden"></div></div>
+          <nav className="flex items-end justify-end md:hidden">
+ 
+            <MobileNav />
+          </nav>
       </div>
     </header>
   )

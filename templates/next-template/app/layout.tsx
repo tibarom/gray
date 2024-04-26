@@ -18,6 +18,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import VideoComponent from "@/components/VideoComponent"
 import AniComponent from "@/components/AniComponent"
+import {ScrollArea} from "@/registry/new-york/ui/scroll-area"
 
 export const metadata: Metadata = {
   title: {
@@ -41,6 +42,15 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  // const [showOverlay, setShowOverlay] = useState(false);
+
+  // useEffect(() => {
+  //   // 클라이언트 사이드에서만 실행되므로 window 객체를 안전하게 사용할 수 있습니다.
+  //   const path = window.location.pathname;
+  //   const isOverlayPath = path === '/team' || path === '/portfolio';
+  //   setShowOverlay(isOverlayPath);
+  // }, []); // 컴포넌트가 마운트될 때 한 번만 실행
+
   return (
     <>
       <html lang="en" suppressHydrationWarning>
@@ -57,11 +67,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
             enableSystem
           >
           <div vaul-drawer-wrapper="">
-              <div className="relative flex min-h-screen flex-col bg-background">
-            <AniComponent>
-              <SiteHeader />
-               {children}
-               <SiteFooter />
+            <div className="relative min-h-screen flex-col">
+              <AniComponent>
+                  <SiteHeader />
+                  <div className="flex flex-col">
+                  <div style={{ height: 'calc(100vh - 100px)' }}>
+                  {children}
+
+                  <SiteFooter />
+                  </div>
+                  </div>
               </AniComponent> 
             </div>
             </div>

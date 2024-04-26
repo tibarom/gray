@@ -11,7 +11,7 @@ export default function IndexPage() {
           GrayLab is Web3 Tech Team<br className="hidden sm:inline" />
           &nbsp;building new layers for next world.
         </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground font-gt-america-mono font-bold">
+        <p className="max-w-[700px] text-lg text-muted-foreground font-bold">
           We focus on crypto and related technologies at the frontier. <br className="hidden sm:inline" />
           We build, and contribute to companies and protocols.
         </p>

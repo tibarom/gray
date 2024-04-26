@@ -16,8 +16,8 @@ export default async function IndexPage() {
     // .filter((post) => post.published)
 
   return (
-    <div className="container max-w-4xl py-6 lg:py-10">
-      <hr className="my-8" />
+    <div className="container max-w-4xl py-6 lg:py-10 h-screen bg-background/80">
+      <div className="my-8" />
         {posts?.length ? (
           <div className="grid gap-10 sm:grid-cols-2">
             {posts.map((post, index) => (

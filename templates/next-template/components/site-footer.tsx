@@ -7,7 +7,7 @@ import { ModeToggle } from "@/components/mode-toggle"
 
 export function SiteFooter() {
   return (
-    <footer className="py-6 md:py-0 z-2">
+    <footer className="py-6 md:py-0 z-30">
       <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
         <p className="text-balance text-left text-sm leading-loose text-muted-foreground">
           Built by{" "}
@@ -22,73 +22,61 @@ export function SiteFooter() {
           .
         </p>
       </div>
-      <div className="bg-invert-0">
-      <nav className="flex items-center justify-center">
-            <Link
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={cn(
-                  buttonVariants({
-                    variant: "ghost",
-                  }),
-                  "w-9 px-0"
-                )}
-              >
-                <Icons.gitHub className="h-4 w-4" />
-                <span className="sr-only">GitHub</span>
-              </div>
-            </Link>
-            <Link
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={cn(
-                  buttonVariants({
-                    variant: "ghost",
-                  }),
-                  "w-9 px-0"
-                )}
-              >
-                <Icons.twitter className="h-3 w-3 fill-current" />
-                <span className="sr-only">Twitter</span>
-              </div>
-            </Link>
-            <ModeToggle />
-          </nav>
-      <div className="mt-28 pb-28 bg-muted" aria-hidden="true">
-        <div className="-mt-6">
-            <div className="bg-background h-6"></div>
-            <div className="bg-background h-5 mt-1"></div>
-            <div className="bg-background h-4 mt-2"></div>
-            <div className="bg-background h-4 mt-3"></div>
-            <div className="bg-background h-5 mt-4"></div>
-            <div className="bg-background h-4 mt-5"></div>
-            <div className="bg-background h-4 mt-6"></div>
-            <div className="bg-background h-4 mt-7"></div>
-            <div className="bg-background h-4 mt-8"></div>
-            <div className="bg-background h-4 mt-9"></div>
-            <div className="bg-background h-3 mt-10"></div>
-            <div className="bg-background h-3 mt-11"></div>
-            <div className="bg-background h-3 mt-12"></div>
-            <div className="bg-background h-3 mt-13"></div>
-            <div className="bg-background h-3 mt-14"></div>
-            <div className="bg-background h-2 mt-15"></div>
-            <div className="bg-background h-2 mt-16"></div>
-            <div className="bg-background h-2 mt-17"></div>
-            <div className="bg-background h-2 mt-18"></div>
-            <div className="bg-background h-2 mt-19"></div>
-            <div className="bg-background h-1 mt-20"></div>
-            <div className="bg-background h-1 mt-21"></div>
-            <div className="bg-background h-1 mt-22"></div>
+      {/* <div className="bg-invert-0">
+        <div className="mt-28 pb-28" aria-hidden="true">
+            <div className="-mt-6">
+            <div className="bg-background h-6 opacity-5"></div>
+            <div className="bg-muted h-1 opacity-10"></div>
+            <div className="bg-background h-5 opacity-10"></div>
+            <div className="bg-muted h-1 opacity-10"></div>
+            <div className="bg-background h-5 opacity-10"></div>
+            <div className="bg-muted h-2 opacity-15"></div>
+            <div className="bg-background h-4 opacity-15"></div>
+            <div className="bg-muted h-3 opacity-20"></div>
+            <div className="bg-background h-4 opacity-20"></div>
+            <div className="bg-muted h-4 opacity-25"></div>
+            <div className="bg-background h-5 opacity-25"></div>
+            <div className="bg-muted h-5 opacity-30"></div>
+            <div className="bg-background h-4 opacity-30"></div>
+            <div className="bg-muted h-6 opacity-35"></div>
+            <div className="bg-background h-4 opacity-35"></div>
+            <div className="bg-muted h-7 opacity-40"></div>
+            <div className="bg-background h-4 opacity-40"></div>
+            <div className="bg-muted h-8 opacity-45"></div>
+            <div className="bg-background h-4 opacity-45"></div>
+            <div className="bg-muted h-9 opacity-50"></div>
+            <div className="bg-background h-4 opacity-50"></div>
+            <div className="bg-muted h-10 opacity-55"></div>
+            <div className="bg-background h-3 opacity-55"></div>
+            <div className="bg-muted h-11 opacity-60"></div>
+            <div className="bg-background h-3 opacity-60"></div>
+            <div className="bg-muted h-12 opacity-65"></div>
+            <div className="bg-background h-3 opacity-65"></div>
+            <div className="bg-muted h-13 opacity-70"></div>
+            <div className="bg-background h-3 opacity-70"></div>
+            <div className="bg-muted h-14 opacity-75"></div>
+            <div className="bg-background h-3 opacity-75"></div>
+            <div className="bg-muted h-15 opacity-80"></div>
+            <div className="bg-background h-2 opacity-80"></div>
+            <div className="bg-muted h-16 opacity-85"></div>
+            <div className="bg-background h-2 opacity-85"></div>
+            <div className="bg-muted h-17 opacity-90"></div>
+            <div className="bg-background h-2 opacity-90"></div>
+            <div className="bg-muted h-18 opacity-95"></div>
+            <div className="bg-background h-2 opacity-95"></div>
+            <div className="bg-muted h-19 opacity-100"></div>
+            <div className="bg-background h-2 opacity-100"></div>
+            <div className="bg-muted h-20 opacity-100"></div>
+            <div className="bg-background h-1 opacity-100"></div>
+            <div className="bg-muted h-21 opacity-100"></div>
+            <div className="bg-background h-1 opacity-100"></div>
+            <div className="bg-muted h-22 opacity-100"></div>
+            <div className="bg-background h-1 opacity-100"></div>
+            </div>
         </div>
+      </div> */}
 
-</div>
-</div>
+
 
     </footer>
   )
