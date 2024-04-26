@@ -74,7 +74,7 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
     cameraRef.current = camera;
 
     // Initialize renderer
-    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
     renderer.setClearColor( 0x000000, 0 );
     renderer.setSize(window.innerWidth, window.innerHeight);
     if (containerRef.current) {
@@ -133,7 +133,6 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
       mesh.rotation.y += options.perlin.vel;
       mesh.rotation.x = Math.sin(performance * options.spin.sinVel) * options.spin.ampVel * Math.PI / 180;
   
-      // material.uniforms.time.value += options.perlin.speed * elapsedTime;
       material.uniforms.time.value = options.perlin.speed * (elapsedTime);
       material.uniforms.pointscale.value = options.perlin.perlins;
       material.uniforms.decay.value = options.perlin.decay;
