@@ -34,12 +34,14 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
   const [vertexShaderCode, setVertexShaderCode] = useState('');
   const [fragmentShaderCode, setFragmentShaderCode] = useState('');
   const scene = new THREE.Scene();
+
   const containerRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
 
   let material: THREE.ShaderMaterial;
   let mesh: THREE.Points;
+  let renderer: THREE.WebGLRenderer;
 
   useEffect(() => {
     fetch('shaders/shader.vert')
@@ -66,7 +68,8 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
     cameraRef.current = camera;
 
     // Initialize renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setClearColor( 0x000000, 0 );
     renderer.setSize(window.innerWidth, window.innerHeight);
     if (containerRef.current) {
       containerRef.current.appendChild(renderer.domElement);
@@ -135,7 +138,6 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
 
   return (
     <div className="relative z-0 h-full w-full" >
-      <div id="container" />
       <div id="container" ref={containerRef} />
       {children}
       </div>
