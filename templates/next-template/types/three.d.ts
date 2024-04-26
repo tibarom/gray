@@ -1,4 +1,5 @@
 import { BufferGeometry } from 'three';
+import { IcosahedronBufferGeometry } from 'three/src/geometries/IcosahedronGeometry.js';
 
 declare module 'three' {
     export class PolyhedronBufferGeometry extends BufferGeometry {
