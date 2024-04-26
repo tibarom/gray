@@ -70,7 +70,7 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
     // Initialize renderer
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setClearColor( 0x000000, 0 );
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth *0.8, window.innerHeight*0.8);
     if (containerRef.current) {
       containerRef.current.appendChild(renderer.domElement);
     }
@@ -139,7 +139,7 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
   return (
     <div>
     <div className="sticky top-0 z-0 w-full">
-      <div className="z-0" id="container" ref={containerRef} />
+      <div id="container" ref={containerRef} />
     </div>
     <div className="content">
       {children}
