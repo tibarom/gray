@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full bg-gradient-opacity">
-      <div className="container flex h-16 items-center space-x-4 justify-between space-x-0">
+      <div className="container flex h-16 items-center justify-between">
           <MainNav/>
 
 <div className="flex">      <Link href="/" className="mr-6 flex items-center space-x-2 sm:hidden">
