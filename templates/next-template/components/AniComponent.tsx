@@ -42,7 +42,7 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
   let material: THREE.ShaderMaterial;
   let mesh: THREE.Points;
   let renderer: THREE.WebGLRenderer;
-  // let camera: THREE.PerspectiveCamera;
+  let camera: THREE.PerspectiveCamera;
 
   useEffect(() => {
     fetch('shaders/shader.vert')
@@ -64,8 +64,12 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
 
   const init = () => {
     // Initialize camera
-    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 1, 1000);
-    camera.position.z = 36 + (window.innerWidth - 1920) / 100; // 초기 z 위치 동적 설정
+    camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 1, 1000);
+    if (window.innerWidth >= 768) {
+      camera.position.z = 12 / (window.innerWidth / 1920); // 초기 z 위치 동적 설정
+    } else {
+      camera.position.z = 37 + (window.innerWidth - 1920) / 100; // 모바일
+    }
 
     cameraRef.current = camera;
 
@@ -109,8 +113,12 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
       rendererRef.current.setSize(window.innerWidth, window.innerHeight);
       cameraRef.current.aspect = window.innerWidth / window.innerHeight;
       cameraRef.current.updateProjectionMatrix();
-
-    cameraRef.current.position.z = 36 + (window.innerWidth - 1920) / 100; // 1920px 기준으로 비례적으로 z 위치 조절
+  
+      if (window.innerWidth >= 768) {
+        camera.position.z = 12 / (window.innerWidth / 1920); // 초기 z 위치 동적 설정
+      } else {
+        camera.position.z = 37 + (window.innerWidth - 1920) / 100; // 모바일
+      }
     }
   };
 
