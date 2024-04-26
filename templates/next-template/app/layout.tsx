@@ -49,12 +49,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+          >
           <div vaul-drawer-wrapper="">
               <div className="relative flex min-h-screen flex-col bg-background">
             <AniComponent>
               <SiteHeader />
-              <div className="relative z-10">{children}</div>
+               {children}
               </AniComponent> 
               <SiteFooter />
             </div>

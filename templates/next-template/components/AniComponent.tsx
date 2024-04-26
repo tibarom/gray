@@ -139,9 +139,13 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
   return (
     // <div className="relative z-0 h-full w-full" >
     <div>
-      <div id="container" ref={containerRef} />
-      {children}
-      </div>
+    <div className="sticky top-0 z-0 w-full">
+      <div className="z-0" id="container" ref={containerRef} />
+    </div>
+    <div className="content">
+    {children}
+</div>
+    </div>
   );
 };
 
