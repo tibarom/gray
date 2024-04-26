@@ -9,6 +9,7 @@ import { docsConfig } from "@/config/docs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
+import { ModeToggle } from "@/components/mode-toggle"
 
 // import { Button } from "@/registry/default/ui/button"
 // import { ScrollArea } from "@/registry/default/ui/scroll-area"
@@ -93,6 +94,7 @@ export function MobileNav() {
             )}
           </div>
         </ScrollArea>
+        <ModeToggle/>
       </SheetContent>
     </Sheet>
   )
