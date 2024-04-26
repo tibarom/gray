@@ -56,8 +56,8 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-        // mono: ["var(--font-mono)", ...fontFamily.mono],
+        // sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        sans: ['"GT America Mono"', 'monospace'],
       },
       keyframes: {
         "accordion-down": {

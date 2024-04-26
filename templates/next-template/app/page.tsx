@@ -7,11 +7,11 @@ export default function IndexPage() {
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10 my-36">
       <div className="flex w-full flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+        <h1 className="text-3xl leading-tight tracking-tighter md:text-4xl font-gt-america-mono font-bold">
           GrayLab is Web3 Tech Team<br className="hidden sm:inline" />
           &nbsp;building new layers for next world.
         </h1>
-        <p className="max-w-[700px] font-bold text-lg text-muted-foreground">
+        <p className="max-w-[700px] text-lg text-muted-foreground font-gt-america-mono font-bold">
           We focus on crypto and related technologies at the frontier. <br className="hidden sm:inline" />
           We build, and contribute to companies and protocols.
         </p>

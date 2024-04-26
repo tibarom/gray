@@ -30,9 +30,9 @@ export default async function IndexPage() {
                     </Avatar>
                   )}
                   <div className="grid gap-1">
-                    <div className="text-sm font-medium leading-none">
+                    <p className="text-sm font-bold leading-none">
                       {post.title}
-                    </div>
+                    </p>
                     {post.description && (
                       <div className="text-sm text-muted-foreground">
                         {post.description}

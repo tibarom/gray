@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'GT America Mono';
+    src: url('/GT-America-Mono-Regular-Trial.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GT America Mono';
+    src: url('/GT-America-Mono-Bold-Trial.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  

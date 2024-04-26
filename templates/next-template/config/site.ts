@@ -7,19 +7,19 @@ export const siteConfig = {
     "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
   mainNav: [
     {
-      title: "Team",
+      title: "TEAM",
       href: "/team",
     },
     {
-      title: "Portfolio",
+      title: "PORTFOLIO",
       href: "/portfolio",
     },
     {
-      title: "Writing",
+      title: "WRITING",
       href: "/writing",
     },
     {
-      title: "Contact",
+      title: "CONTACT",
       href: "/contact",
     },
   ],
