@@ -123,17 +123,18 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
   };
 
   const animation = () => {
+    requestAnimationFrame(animation);
     const currentTime = Date.now();
     const elapsedTime = (currentTime - startTime) / 5;
+
+    const yRotation = elapsedTime * options.perlin.vel;
+    const xRotation = Math.sin(elapsedTime * options.spin.sinVel) * options.spin.ampVel * Math.PI / 180;
+
+    if (rendererRef.current && cameraRef.current && scene) {  
+      mesh.rotation.y = yRotation;
+      mesh.rotation.x = xRotation;
   
-    requestAnimationFrame(animation);
-    if (rendererRef.current && cameraRef.current && scene) {
-      const performance = elapsedTime;
-  
-      mesh.rotation.y += options.perlin.vel;
-      mesh.rotation.x = Math.sin(performance * options.spin.sinVel) * options.spin.ampVel * Math.PI / 180;
-  
-      material.uniforms.time.value = options.perlin.speed * (elapsedTime);
+      material.uniforms.time.value = elapsedTime * options.perlin.speed;
       material.uniforms.pointscale.value = options.perlin.perlins;
       material.uniforms.decay.value = options.perlin.decay;
       material.uniforms.complex.value = options.perlin.complex;
