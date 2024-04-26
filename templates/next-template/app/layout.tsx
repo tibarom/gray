@@ -59,8 +59,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <AniComponent>
               <SiteHeader />
                {children}
+               <SiteFooter />
               </AniComponent> 
-              <SiteFooter />
             </div>
             </div>
             <TailwindIndicator />
