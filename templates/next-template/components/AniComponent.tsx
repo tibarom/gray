@@ -70,7 +70,7 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
     // Initialize renderer
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setClearColor( 0x000000, 0 );
-    renderer.setSize(window.innerWidth *0.8, window.innerHeight*0.8);
+    renderer.setSize(window.innerWidth*0.8, window.innerHeight*0.8);
     if (containerRef.current) {
       containerRef.current.appendChild(renderer.domElement);
     }
@@ -104,7 +104,7 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
 
   const onWindowResize = () => {
     if (rendererRef.current && cameraRef.current) {
-      rendererRef.current.setSize(window.innerWidth, window.innerHeight);
+      rendererRef.current.setSize(window.innerWidth*0.8, window.innerHeight*0.8);
       cameraRef.current.aspect = window.innerWidth / window.innerHeight;
       cameraRef.current.updateProjectionMatrix();
     }
