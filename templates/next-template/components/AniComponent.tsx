@@ -42,6 +42,7 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
   let material: THREE.ShaderMaterial;
   let mesh: THREE.Points;
   let renderer: THREE.WebGLRenderer;
+  // let camera: THREE.PerspectiveCamera;
 
   useEffect(() => {
     fetch('shaders/shader.vert')
@@ -64,13 +65,14 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
   const init = () => {
     // Initialize camera
     const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 1, 1000);
-    camera.position.z = 12;
+    camera.position.z = 36 + (window.innerWidth - 1920) / 100; // 초기 z 위치 동적 설정
+
     cameraRef.current = camera;
 
     // Initialize renderer
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setClearColor( 0x000000, 0 );
-    renderer.setSize(window.innerWidth*0.8, window.innerHeight*0.8);
+    renderer.setSize(window.innerWidth, window.innerHeight);
     if (containerRef.current) {
       containerRef.current.appendChild(renderer.domElement);
     }
@@ -104,9 +106,11 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
 
   const onWindowResize = () => {
     if (rendererRef.current && cameraRef.current) {
-      rendererRef.current.setSize(window.innerWidth*0.8, window.innerHeight*0.8);
+      rendererRef.current.setSize(window.innerWidth, window.innerHeight);
       cameraRef.current.aspect = window.innerWidth / window.innerHeight;
       cameraRef.current.updateProjectionMatrix();
+
+    cameraRef.current.position.z = 36 + (window.innerWidth - 1920) / 100; // 1920px 기준으로 비례적으로 z 위치 조절
     }
   };
 
