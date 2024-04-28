@@ -189,25 +189,36 @@ const AudioVisualizer: React.FC = () => {
             LAST_TIME = Date.now()
             t += 0.01
             analyser.getByteFrequencyData(frequencyData)
+            
             ctx.clearRect(0, 0, canvas.width, canvas.height)
             biquadFilter.type = "lowshelf"
             biquadFilter.frequency.setValueAtTime(sliderFreq, audioCtx.currentTime)
             biquadFilter.gain.value = 25
         
-            moyenne = frequencyData.reduce(reducer) / frequencyData.length
-        
-            for (var i = 0; i < 6; i++) {
-                // get the frequency according to current i
-                let percentIdx = i / 6;
-                let frequencyIdx = Math.floor(1024 * percentIdx)
-            
-                lines.update()
-                lines.draw(ctx)
-            
-                cumul += frequencyData[frequencyIdx]
+            moyenne = frequencyData.reduce(reducer) / frequencyData.length * 0.75
+            // 감쇄 인자 조절
+            // const dampingFactor = 0.000001; // 감쇄 인자를 낮추어 반응성 증가
+            // moyenne = (moyenne * dampingFactor) + (frequencyData.reduce(reducer) / frequencyData.length) * (1 - dampingFactor);
+
+            // 선의 반응성 확인
+            console.log("Current average frequency amplitude: ", moyenne);
+
+            if (moyenne > 1) { // 민감도 조절을 위한 조건 추가
+                for (var i = 0; i < 6; i++) {
+                    let percentIdx = i / 6;
+                    let frequencyIdx = Math.floor(1024 * percentIdx);
+
+                    lines.update();
+                    lines.draw(ctx);
+
+                    cumul += frequencyData[frequencyIdx];
+                }
+                average = cumul / 255;
+                requestAnimationFrame(frame);
+            } else {
+                console.log("Frequency data too low, not updating lines.");
+                requestAnimationFrame(frame);
             }
-            average = cumul / 255;
-            requestAnimationFrame(frame)
         }
 
         const loadSound = (url: string) => {
