@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "BluuNext";
+    src: url("https://res.cloudinary.com/dn32la6ny/raw/upload/v1543933069/bluunext-bolditalic-webfont.woff") format("woff");
+  }
+  
+  #start {
+    font-family: BluuNext;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 25px;
+    background: transparent;
+    width: 20%;
+    border: none;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-repeat: no-repeat;
+    background-size: 22% 0.4em;
+    transition: background-size 0.25s ease-in;
+  }
+  
+  #canvas {
+    position: fixed;
+    border-radius: 50%; /* 원형 만들기 */
+    overflow: hidden; /* 내부 내용이 원형을 벗어나지 않도록 설정 */
+    position: fixed;
+    background-color: transparent;
+    border: 2px solid white;  
+    right: 5%;
+    bottom: 5%;
+    width: 10vw;  /* 뷰포트 최소 길이에 따른 크기 설정 */
+    height: 10vh; /* 너비와 높이를 같게 설정 */
+  }
+
+  /* canvas {
+    position: fixed;
+    background-color: transparent;
+    border: 2px solid white;    right: 5%;
+    bottom: 5%;
+    width: 15vmin;  
+    height: 15vmin; 
+  } */
+  

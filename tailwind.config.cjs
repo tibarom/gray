@@ -11,6 +11,9 @@ module.exports = {
       screens: {
         "2xl": "1400px",
       },
+      spacing: {
+        '1/2': '50%',
+      }
     },
     extend: {
       backgroundImage: {
@@ -81,6 +84,11 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
       },
+    },
+  },
+  variants: {
+    extend: {
+      borderWidth: ['responsive', 'hover'],
     },
   },
   plugins: [require("tailwindcss-animate")],

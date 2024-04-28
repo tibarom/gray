@@ -20,6 +20,12 @@ import VideoComponent from "@/components/VideoComponent"
 import AniComponent from "@/components/AniComponent"
 import {ScrollArea} from "@/registry/new-york/ui/scroll-area"
 
+import WidgetBotCrate from "@/components/discord/widgetbot";
+import AudioButton from "@/components/AudioButton"
+import AudioVisualizer from "@/components/AudioBtn"
+
+import IntrinsicAttributes from "react"
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -41,6 +47,7 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
+
 export default function RootLayout({ children }: RootLayoutProps) {
   // const [showOverlay, setShowOverlay] = useState(false);
 
@@ -50,7 +57,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   //   const isOverlayPath = path === '/team' || path === '/portfolio';
   //   setShowOverlay(isOverlayPath);
   // }, []); // 컴포넌트가 마운트될 때 한 번만 실행
-
+  
   return (
     <>
       <html lang="en" suppressHydrationWarning>
@@ -73,7 +80,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   <div className="flex flex-col">
                   <div style={{ height: 'calc(100vh - 100px)' }}>
                   {children}
-
+                  <div className="sticky absolute bottom-12 flex justify-end">
+                  {/* <AudioButton url={"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"} /> */}
+                  <AudioVisualizer/>
+                  </div>
                   <SiteFooter />
                   </div>
                   </div>

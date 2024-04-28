@@ -12,8 +12,8 @@ export default function IndexPage() {
           &nbsp;building new layers for next world.
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground font-bold">
-          We focus on crypto and related technologies at the frontier. <br className="hidden sm:inline" />
-          We build, and contribute to companies and protocols.
+          We focus on blockchain technologies at the frontier. <br className="hidden sm:inline" />
+          We build, and contribute to protocols for next world.
         </p>
       </div>
       <div className="flex gap-4">

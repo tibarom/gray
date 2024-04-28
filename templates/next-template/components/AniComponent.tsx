@@ -46,18 +46,17 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
 
   useEffect(() => {
     fetch('shaders/shader.vert')
-      // .then(response => { console.log("resres: ", response); return response.text() })
       .then(response => response.text())
       .then(setVertexShaderCode);
-    console.log("vertexShaderCode", vertexShaderCode)
     fetch('shaders/shader.frag')
       .then(response => response.text())
       .then(setFragmentShaderCode);
-    console.log("fragmentShaderCode", fragmentShaderCode)
   }, []);
 
   useEffect(() => {
     if (vertexShaderCode && fragmentShaderCode && typeof window !== 'undefined') {
+      console.log("typeof(vertexShaderCode): ", typeof(vertexShaderCode))
+      console.log("typeof(fragmentShaderCode): ", typeof(fragmentShaderCode))
       init();
     }
   }, [vertexShaderCode, fragmentShaderCode]);
