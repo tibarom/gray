@@ -91,7 +91,6 @@ export function MobileNav() {
         </ScrollArea>
         <div className="fixed bottom-5 w-full">
             <ModeToggle />
-
           </div>
       </SheetContent>
     </Sheet>

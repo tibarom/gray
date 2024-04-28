@@ -46,7 +46,7 @@ const AudioVisualizer: React.FC = () => {
         // 그리드 그리기 설정
         const gridSize = 30; // 격자 크기 설정
         ctx.strokeStyle = '#808080'; // 선 색상: 회색
-        ctx.lineWidth = 3; // 선 두께
+        ctx.lineWidth = 2; // 선 두께
         ctx.globalAlpha = 0.2;
     
         // 수직 선 그리기
@@ -287,7 +287,7 @@ const AudioVisualizer: React.FC = () => {
                 <canvas
                     ref={canvasRef}
                     id="canvas"
-                    className="bg-transparent border-primary border-2"
+                    className="bg-transparent border-primary border-s-4"
                 ></canvas>
                 <audio ref={audioRef} hidden crossOrigin="anonymous" src="https://clementroche.dev/nto-alter-ego.mp3"></audio>
             </button>
