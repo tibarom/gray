@@ -23,6 +23,10 @@ export function MobileNav() {
 
   return (
     <div>
+
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <div className="flex items-end top-0">
         <Button
           variant="ghost"
           className="text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
@@ -38,33 +42,29 @@ export function MobileNav() {
             d="M3 5H11"
             stroke="currentColor"
             strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            // strokeLinecap="round"
+            // strokeLinejoin="round"
           ></path>
           <path
             d="M3 12H16"
             stroke="currentColor"
             strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            // strokeLinecap="round"
+            // strokeLinejoin="round"
           ></path>
           <path
             d="M3 19H21"
             stroke="currentColor"
             strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            // strokeLinecap="round"
+            // strokeLinejoin="round"
           ></path>
           </svg>
         </Button>
-    {/* <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger asChild>
-        <div className="flex items-end top-0">
-
         </div>
       </SheetTrigger>
       <SheetContent side="left" className="pr-0">
-        {/* <MobileLink
+        <MobileLink
           href="/"
           className="flex items-center"
           onOpenChange={setOpen}
@@ -73,15 +73,7 @@ export function MobileNav() {
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-          <div className="flex flex-col space-y-3 font-gt-america-mono font-bold">
-          <MobileLink
-          href="/"
-          className="flex items-center"
-          onOpenChange={setOpen}
-        >
-          
-          <span className="font-bold">HOME</span>
-        </MobileLink>
+          <div className="flex flex-col space-y-3 font-gt-america-mono font-bold text-2xl">
             {siteConfig.mainNav?.map(
               (item) =>
                 item.href && (
@@ -98,7 +90,7 @@ export function MobileNav() {
         </ScrollArea>
         <ModeToggle/>
       </SheetContent>
-    </Sheet> */}
+    </Sheet>
     </div>
   )
 }
