@@ -78,7 +78,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <AniComponent>
                   <SiteHeader />
                   <div className="flex flex-col">
-                  <div style={{ height: 'calc(100vh - 100px)' }}>
+                  <div>
                   {children}
                   <div className="absolute bottom-12 flex justify-end">
                   {/* <AudioButton url={"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"} /> */}

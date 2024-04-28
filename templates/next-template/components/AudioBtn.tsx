@@ -40,14 +40,14 @@ const AudioVisualizer: React.FC = () => {
 
     const drawMercatorGrid = (canvas: any) => {
         const ctx = canvas.getContext('2d');
-        const width = canvas.width;
-        const height = canvas.height;
+        const width = canvas.width*10;
+        const height = canvas.width*5;
     
         // 그리드 그리기 설정
-        const gridSize = 120; // 격자 크기 설정
+        const gridSize = 30; // 격자 크기 설정
         ctx.strokeStyle = '#808080'; // 선 색상: 회색
-        ctx.lineWidth = 12; // 선 두께
-        ctx.globalAlpha = 0.5;
+        ctx.lineWidth = 3; // 선 두께
+        ctx.globalAlpha = 0.2;
     
         // 수직 선 그리기
         for (let x = 0; x <= width; x += gridSize) {
@@ -87,10 +87,11 @@ const AudioVisualizer: React.FC = () => {
         console.log("canvasRef is not null")
         console.log("canvasRef.current: ", canvasRef.current)
         canvas = canvasRef.current as HTMLCanvasElement;
-        canvas.style.width = '10vw';
-        canvas.style.height = '10vh';
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.style.width = '6vw';
+        canvas.style.height = '6vw';
+        
+        // canvas.width = window.innerWidth;
+        // canvas.height = window.innerHeight;
         console.log("start drawing grid")
         drawMercatorGrid(canvas);
     }
@@ -282,10 +283,14 @@ const AudioVisualizer: React.FC = () => {
     }
     return (
         <div className="z-0">
-                <button id="start" onClick={initializeAudioVisualizer} className="positionCanvas">
-                <canvas ref={canvasRef} id="canvas"></canvas>
-                    <audio ref={audioRef} hidden crossOrigin="anonymous" src="https://clementroche.dev/nto-alter-ego.mp3"></audio>
-                </button>
+            <button id="start" onClick={initializeAudioVisualizer} className="relative">
+                <canvas
+                    ref={canvasRef}
+                    id="canvas"
+                    className="bg-transparent border-primary border-2"
+                ></canvas>
+                <audio ref={audioRef} hidden crossOrigin="anonymous" src="https://clementroche.dev/nto-alter-ego.mp3"></audio>
+            </button>
         </div>
     );
 };
