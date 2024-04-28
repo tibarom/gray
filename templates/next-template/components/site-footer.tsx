@@ -7,7 +7,7 @@ import { ModeToggle } from "@/components/mode-toggle"
 
 export function SiteFooter() {
   return (
-    <footer className="py-6 md:py-0 z-0 mr-4 ml-4 mt-4 mb-4">
+    <footer className=" md:py-0  mr-4 ml-4 mt-4 mb-4 w-full h-full">
         <div className="mb-sm flex-1 text-xs">
         <p className="text-balance text-left text-sm leading-loose text-muted-foreground">
           Built by{" "}

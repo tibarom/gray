@@ -78,13 +78,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <AniComponent>
                   <SiteHeader />
                   <div className="flex flex-col">
-                  <div>
+                  <div className="md:mb-0 mb-28">
                   {children}
                   <div className="absolute bottom-12 flex justify-end">
                   {/* <AudioButton url={"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"} /> */}
                   <AudioVisualizer/>
                   </div>
-                  <SiteFooter />
+                  </div>
+                  <div className="z-10 bg-gradient-opacity-0 w-full h-full">
+                    <SiteFooter />
                   </div>
                   </div>
               </AniComponent> 
