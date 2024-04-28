@@ -32,7 +32,7 @@ export function MainNav() {
               : "text-foreground/60"
           )}
         >
-          Team
+          TEAM
         </Link>
         <Link
           href="/writing"
@@ -43,7 +43,7 @@ export function MainNav() {
               : "text-foreground/60"
           )}
         >
-          Writing
+          WRITING
         </Link>
         <Link
           href="/portfolio"
@@ -54,7 +54,7 @@ export function MainNav() {
               : "text-foreground/60"
           )}
         >
-          Portfolio
+          PORTFOLIO
         </Link>
         <Link
           href="/contact"
@@ -65,7 +65,7 @@ export function MainNav() {
               : "text-foreground/60"
           )}
         >
-          Contact
+          CONTACT
         </Link>
       </div>
       <div className="flex items-center">
