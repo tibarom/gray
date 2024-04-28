@@ -80,7 +80,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   <div className="flex flex-col">
                   <div style={{ height: 'calc(100vh - 100px)' }}>
                   {children}
-                  <div className="sticky absolute bottom-12 flex justify-end">
+                  <div className="absolute bottom-12 flex justify-end">
                   {/* <AudioButton url={"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"} /> */}
                   <AudioVisualizer/>
                   </div>
