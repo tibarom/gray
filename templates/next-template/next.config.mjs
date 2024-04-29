@@ -28,12 +28,12 @@ const nextConfig = {
     return [
       {
         source: "/components",
-        destination: "/docs/components/accordion",
+        destination: "/about/components/accordion",
         permanent: true,
       },
       {
-        source: "/docs/components",
-        destination: "/docs/components/accordion",
+        source: "/about/components",
+        destination: "/about/components/accordion",
         permanent: true,
       },
       {
@@ -42,23 +42,23 @@ const nextConfig = {
         permanent: false,
       },
       {
-        source: "/docs/primitives/:path*",
-        destination: "/docs/components/:path*",
+        source: "/about/primitives/:path*",
+        destination: "/about/components/:path*",
         permanent: true,
       },
       {
         source: "/figma",
-        destination: "/docs/figma",
+        destination: "/about/figma",
         permanent: true,
       },
       {
-        source: "/docs/forms",
-        destination: "/docs/components/form",
+        source: "/about/forms",
+        destination: "/about/components/form",
         permanent: false,
       },
       {
-        source: "/docs/forms/react-hook-form",
-        destination: "/docs/components/form",
+        source: "/about/forms/react-hook-form",
+        destination: "/about/components/form",
         permanent: false,
       },
     ]
