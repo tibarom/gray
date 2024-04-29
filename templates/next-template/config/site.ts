@@ -7,8 +7,8 @@ export const siteConfig = {
     "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
   mainNav: [
     {
-      title: "TEAM",
-      href: "/team",
+      title: "ABOUT",
+      href: "/about",
     },
     {
       title: "WRITING",

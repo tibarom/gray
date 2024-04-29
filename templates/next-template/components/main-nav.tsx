@@ -24,15 +24,15 @@ export function MainNav() {
         </span>
       </Link>
         <Link
-          href="/team"
+          href="/about"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/team")
+            pathname?.startsWith("/about")
               ? "text-foreground"
               : "text-foreground/60"
           )}
         >
-          TEAM
+          ABOUT
         </Link>
         <Link
           href="/writing"

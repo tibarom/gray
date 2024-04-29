@@ -1,11 +1,11 @@
 import { MainNavItem, SidebarNavItem } from "types/nav"
 
-interface DocsConfig {
+interface AboutsConfig {
   mainNav: MainNavItem[]
   sidebarNav: SidebarNavItem[]
 }
 
-export const docsConfig: DocsConfig = {
+export const aboutsConfig: AboutsConfig = {
   mainNav: [
     {
       title: "Team",

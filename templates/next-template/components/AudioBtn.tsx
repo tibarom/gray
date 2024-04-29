@@ -7,6 +7,7 @@ import { init } from "next/dist/compiled/webpack/webpack";
 
 import React, { useEffect, useRef, useState } from 'react';
 import { any } from "zod";
+import { Icons } from "./icons";
 
 const AudioVisualizer: React.FC = () => {
     useEffect(() => {
@@ -294,12 +295,15 @@ const AudioVisualizer: React.FC = () => {
     }
     return (
         <div className="z-0">
-            <button id="start" onClick={initializeAudioVisualizer} className="relative">
+            
+            <button id="start" onClick={initializeAudioVisualizer} className="flex items-center">
+                <Icons.logo className="absolute bottom-14 right-5" />
                 <canvas
                     ref={canvasRef}
                     id="canvas"
                     className="bg-transparent border-primary border-s-4"
                 ></canvas>
+                   
                 <audio ref={audioRef} hidden crossOrigin="anonymous" src="https://clementroche.dev/nto-alter-ego.mp3"></audio>
             </button>
         </div>

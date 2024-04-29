@@ -19,24 +19,64 @@ import { rehypeNpmCommand } from "./lib/rehype-npm-command"
 const computedFields = {
   slug: {
     type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    resolve: (About) => `/${About._raw.flattenedPath}`,
   },
   slugAsParams: {
     type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+    resolve: (About) => About._raw.flattenedPath.split("/").slice(1).join("/"),
   },
 }
 
 const LinksProperties = defineNestedType(() => ({
   name: "LinksProperties",
   fields: {
-    doc: {
+    about: {
       type: "string",
     },
     api: {
       type: "string",
     },
   },
+}))
+
+export const About = defineDocumentType(() => ({
+  name: "About",
+  filePathPattern: `docs/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+      required: true,
+    },
+    published: {
+      type: "boolean",
+      default: true,
+    },
+    links: {
+      type: "nested",
+      of: LinksProperties,
+    },
+    featured: {
+      type: "boolean",
+      default: false,
+      required: false,
+    },
+    component: {
+      type: "boolean",
+      default: false,
+      required: false,
+    },
+    toc: {
+      type: "boolean",
+      default: true,
+      required: false,
+    },
+  },
+  computedFields,
 }))
 
 export const Writing = defineDocumentType(() => ({
@@ -162,7 +202,7 @@ export const Portfolio = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Writing, Team, Portfolio],
+  documentTypes: [Writing, Team, Portfolio, About],
   mdx: {
     remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [
