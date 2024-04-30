@@ -83,11 +83,9 @@
 /* 이걸로는 구 크기 조정 못함 */
 #container {
   position: absolute; /* 절대 위치 지정 */
-  /* transform: translate(12.5%, 12.5%); 요소의 중심을 정확히 상위 요소의 중앙에 맞춤 */
   z-index: 1; /* 배경 애니메이션을 위한 z-index 설정 */
   background: transparent !important; /* 배경을 투명하게 설정 */
 }
-
 
 .content {
   position: relative;

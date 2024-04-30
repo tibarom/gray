@@ -9,69 +9,49 @@ import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { Badge } from "@/registry/new-york/ui/badge"
 import { ModeToggle } from "@/components/mode-toggle"
+import Image from "next/image"
 export function MainNav() {
   const pathname = usePathname()
 
   return (
-    // <div className="mr-4 hidden md:flex flex h-16 items-center space-x-4 justify-between space-x-0">
-      <div className="mr-4 hidden md:flex h-16 space-x-0 w-full">
-      <div className="container flex justify-between w-full">
-      <div className="flex items-center gap-4 text-sm lg:gap-6">
+    <div className="hidden md:flex w-full wrapper flex h-full items-center justify-between gap-x-gutter">
+      <a className="z-50 -mt-[20px] flex h-nav items-center laptop:-mt-[1px]" href="/">
+      </a>
       <Link href="/" className="mr-6 flex items-center space-x-2">
         <Icons.logo className="h-6 w-6" />
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>
       </Link>
-        <Link
-          href="/about"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/about")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          ABOUT
-        </Link>
-        <Link
-          href="/writing"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/writing")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          WRITING
-        </Link>
-        <Link
-          href="/portfolio"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/portfolio")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          PORTFOLIO
-        </Link>
-        <Link
-          href="/contact"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/contact")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          CONTACT
-        </Link>
+      <div className="border-t laptop:flex-1">  
+        <ul className="flex overflow-hidden">
+          <li className="tick group relative flex h-nav text-xs uppercase hover:before:h-[12px]">
+            <Link className="-ml-px flex items-center pr-lg" href="/about">
+              <span>About</span>
+            </Link>
+          </li>
+        <li className="tick group relative flex h-nav text-xs uppercase hover:before:h-[12px]">
+          <Link className="-ml-px flex items-center pr-lg" href="/writing">
+            <span>Writing</span>
+            </Link>
+        </li>
+        <li className="tick group relative flex h-nav text-xs uppercase hover:before:h-[12px]">
+          <Link className="-ml-px flex items-center pr-lg" href="/portfolio">
+            <span>Portfolio</span>
+            </Link>
+        </li>
+        <li className="tick group relative flex h-nav text-xs uppercase hover:before:h-[12px]">
+          <Link className="-ml-px flex items-center pr-lg" href="/contact">
+            <span>Contact</span>
+            </Link>
+        </li>
+        </ul>
       </div>
       <div className="flex items-center">
-      <ModeToggle/>
+        <ModeToggle/>
       </div>
-      </div>
-      </div>
-  )
+    </div>
+
+  
+)
 }

@@ -4,12 +4,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 type IcosahedronBufferGeometry = THREE.IcosahedronGeometry;
-
 interface AniComponentProps {
-  children: React.ReactNode;
 }
 
-const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
+const AniComponent: React.FC<AniComponentProps> = () => {
+  const currentPath = '/';
 
   let options = {
     perlin: {
@@ -148,14 +147,20 @@ const AniComponent: React.FC<AniComponentProps> = ({ children }) => {
   };
 
   return (
-    <div>
-    <div className="sticky top-0 z-0 w-full">
-      <div id="container" ref={containerRef} />
-    </div>
-    <div className="content">
-      {children}
-    </div>
-    </div>
+    <>
+      {currentPath === '/' ? (
+        <div>
+          <div id="container" ref={containerRef} />
+        </div>
+
+      ) : (
+        <div className="bg-black/80">
+          <div>
+            <div id="container" ref={containerRef} />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

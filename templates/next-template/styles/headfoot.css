@@ -1,0 +1,349 @@
+*,:after,:before {
+    box-sizing: border-box;
+    border: 0 solid
+}
+
+:after,:before {
+    --tw-content: ""
+}
+
+.-ml-px {
+    margin-left: -1
+}
+
+.h-nav {
+    height: 40px
+}
+
+.pr-lg {
+    padding-right: 40px
+}
+
+.tick:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    border-left-width: 1px;
+    content: var(--tw-content);
+    transition-property: height;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s
+}
+
+input::-webkit-inner-spin-button,input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+.before\:h-\[12px\]:before {
+    content: var(--tw-content);
+    height: 12px
+}
+
+.first\:mt-0:first-child {
+    margin-top: 0
+}
+
+.last\:border-b-0:last-child {
+    border-bottom-width: 0
+}
+
+.last-of-type\:pr-0:last-of-type,.last\:pr-0:last-child {
+    padding-right: 0
+}
+
+.hover\:scale-105:hover {
+    --tw-scale-x: 1.05;
+    --tw-scale-y: 1.05;
+    transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.hover\:text-white\/90:hover {
+    color: hsla(0,0%,90%,.9)
+}
+
+.hover\:before\:h-\[12px\]:hover:before {
+    content: var(--tw-content);
+    height: 12px
+}
+
+.focus\:border-white\/50:focus {
+    border-color: hsla(0,0%,90%,.5)
+}
+
+.focus\:outline-none:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px
+}
+
+.group:hover .group-hover\:flex {
+    display: flex
+}
+
+@media (min-width: 640px) {
+    .tablet\:col-span-4 {
+        grid-column:span 4/span 4
+    }
+
+    .tablet\:col-span-8 {
+        grid-column: span 8/span 8
+    }
+
+    .tablet\:block {
+        display: block
+    }
+
+    .tablet\:grid {
+        display: grid
+    }
+
+    .tablet\:w-1\/3 {
+        width: 33.333333%
+    }
+
+    .tablet\:grid-cols-2 {
+        grid-template-columns: repeat(2,minmax(0,1fr))
+    }
+
+    .tablet\:grid-cols-12 {
+        grid-template-columns: repeat(12,minmax(0,1fr))
+    }
+
+    .tablet\:flex-row {
+        flex-direction: row
+    }
+
+    .tablet\:text-2xl {
+        font-size: 28px;
+        line-height: 1.26;
+        letter-spacing: -.01em
+    }
+
+    .tablet\:text-xl {
+        font-size: 24px;
+        line-height: 1.26;
+        letter-spacing: -.04em
+    }
+
+    .tablet\:text-3xl {
+        font-size: 38px;
+        line-height: 1.26;
+        letter-spacing: -.01em
+    }
+}
+
+@media (min-width: 960px) {
+    .laptop\:col-span-1 {
+        grid-column:span 1/span 1
+    }
+
+    .laptop\:mt-xl {
+        margin-top: 64px
+    }
+
+    .laptop\:mt-xxl {
+        margin-top: 104px
+    }
+
+    .laptop\:-mt-\[1px\] {
+        margin-top: -1px
+    }
+
+    .laptop\:mb-0 {
+        margin-bottom: 0
+    }
+
+    .laptop\:block {
+        display: block
+    }
+
+    .laptop\:w-\[76px\] {
+        width: 76px
+    }
+
+    .laptop\:flex-\[0_0_25\%\] {
+        flex: 0 0 25%
+    }
+
+    .laptop\:flex-1 {
+        flex: 1 1 0%
+    }
+
+    .laptop\:grid-cols-3 {
+        grid-template-columns: repeat(3,minmax(0,1fr))
+    }
+
+    .laptop\:flex-row {
+        flex-direction: row
+    }
+
+    .laptop\:pt-xl {
+        padding-top: 64px
+    }
+
+    .laptop\:text-right {
+        text-align: right
+    }
+
+    .laptop\:text-2xl {
+        font-size: 28px;
+        line-height: 1.26;
+        letter-spacing: -.01em
+    }
+
+    .laptop\:wrapper {
+        padding-left: 24px;
+        padding-right: 24px
+    }
+
+    @media (min-width: 960px) {
+        .laptop\:wrapper {
+            padding-left:30px;
+            padding-right: 30px
+        }
+    }
+
+    @media (min-width: 1240px) {
+        .laptop\:wrapper {
+            width:100%;
+            margin-right: auto;
+            margin-left: auto
+        }
+    }
+
+    @media (min-width: 1240px) {
+        @media (min-width:640px) {
+            .laptop\:wrapper {
+                max-width:640px
+            }
+        }
+    }
+
+    @media (min-width: 1240px) {
+        @media (min-width:960px) {
+            .laptop\:wrapper {
+                max-width:960px
+            }
+        }
+    }
+
+    @media (min-width: 1240px) {
+        @media (min-width:1240px) {
+            .laptop\:wrapper {
+                max-width:1240px
+            }
+        }
+    }
+}
+
+@media (min-width: 1240px) {
+    .desktop\:col-span-3 {
+        grid-column:span 3/span 3
+    }
+
+    .desktop\:col-span-9 {
+        grid-column: span 9/span 9
+    }
+}
+
+.h-header {
+    height: 96px
+}
+
+.pointer-events-none {
+    pointer-events: none
+}
+
+.transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s
+}
+
+.duration-1000 {
+    transition-duration: 1s
+}
+
+.backdrop-blur {
+    --tw-backdrop-blur: blur(72px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+}
+
+
+*,:after,:before {
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246/0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia:
+}
+
+.wrapper {
+    padding-left: 24px;
+    padding-right: 24px
+}
+
+.mt-md {
+    margin-top: 24px
+}
+
+.laptop\:mt-xxl {
+    margin-top: 104px
+}
+
+.laptop\:block {
+    display: block
+}
+
+.gap-x-gutter {
+    -moz-column-gap: 30px;
+    column-gap: 30px
+}
+
+#__layout,#__next {
+    display: flex;
+    flex-direction: column
+}
+
+.pr-sm {
+    padding-right: 16px
+}
