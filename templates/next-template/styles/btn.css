@@ -24,7 +24,7 @@
     overflow: hidden; /* 내부 내용이 원형을 벗어나지 않도록 설정 */
     position: fixed;
     right: 5%;
-    bottom: 5%;
+    bottom: 10%;
     width: 6vw;  /* 뷰포트 최소 길이에 따른 크기 설정 */
     height: 6vw; /* 너비와 높이를 같게 설정 */
   }

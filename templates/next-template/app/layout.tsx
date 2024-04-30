@@ -21,7 +21,7 @@ import AniComponent from "@/components/AniComponent"
 
 // import WidgetBotCrate from "@/components/discord/widgetbot";
 // import AudioButton from "@/components/AudioButton"
-// import AudioVisualizer from "@/components/AudioBtn"
+import AudioVisualizer from "@/components/AudioBtn"
 
 export const metadata: Metadata = {
   title: {
@@ -71,10 +71,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   <div className="content">
                     {children}
                   </div>
-
-                    {/* <div className="absolute bottom-12 flex justify-end">
+                    <div className="absolute bottom-40">
                       <AudioVisualizer/>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
               <SiteFooter />

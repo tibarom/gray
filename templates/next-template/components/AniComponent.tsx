@@ -149,18 +149,9 @@ const AniComponent: React.FC<AniComponentProps> = () => {
   return (
     <>
     <div className="sticky top-0">
-      {currentPath === '/' ? (
-        <div>
-          <div id="container" ref={containerRef} />
+      <div>
+        <div id="container" ref={containerRef} />
         </div>
-
-      ) : (
-        <div className="bg-black/80">
-          <div>
-            <div id="container" ref={containerRef} />
-          </div>
-        </div>
-      )}
       </div>
     </>
   );
