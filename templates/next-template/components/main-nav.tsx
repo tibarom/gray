@@ -14,7 +14,7 @@ export function MainNav() {
   const pathname = usePathname()
 
   return (
-    <div className="hidden md:flex w-full wrapper flex h-full items-center justify-between gap-x-gutter">
+    <div className="flex max-md:hidden w-full wrapper flex h-full items-center justify-between gap-x-gutter">
       <a className="z-50 -mt-[20px] flex h-nav items-center laptop:-mt-[1px]" href="/">
       </a>
       <Link href="/" className="mr-6 flex items-center space-x-2">
