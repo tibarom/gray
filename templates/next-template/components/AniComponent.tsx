@@ -148,6 +148,7 @@ const AniComponent: React.FC<AniComponentProps> = () => {
 
   return (
     <>
+    <div className="sticky top-0">
       {currentPath === '/' ? (
         <div>
           <div id="container" ref={containerRef} />
@@ -160,6 +161,7 @@ const AniComponent: React.FC<AniComponentProps> = () => {
           </div>
         </div>
       )}
+      </div>
     </>
   );
 };

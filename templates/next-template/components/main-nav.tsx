@@ -14,14 +14,13 @@ export function MainNav() {
   const pathname = usePathname()
 
   return (
-    <div className="flex max-md:hidden w-full wrapper flex h-full items-center justify-between gap-x-gutter">
-      <a className="z-50 -mt-[20px] flex h-nav items-center laptop:-mt-[1px]" href="/">
-      </a>
-      <Link href="/" className="mr-6 flex items-center space-x-2">
+    <div className="flex max-md:hidden wrapper w-full h-full items-center justify-between gap-x-gutter">
+      <div className="flex gap-6 w-full">
+      <Link className="gap-1 z-50 flex h-nav items-center laptop:-mt-[1px]" href="/">
         <Icons.logo className="h-6 w-6" />
-        <span className="hidden font-bold sm:inline-block">
+        <div className="hidden font-bold sm:inline-block">
           {siteConfig.name}
-        </span>
+        </div>
       </Link>
       <div className="border-t laptop:flex-1">  
         <ul className="flex overflow-hidden">
@@ -46,6 +45,7 @@ export function MainNav() {
             </Link>
         </li>
         </ul>
+      </div>
       </div>
       <div className="flex items-center">
         <ModeToggle/>
